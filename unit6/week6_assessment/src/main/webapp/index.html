@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+	body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: darkgrey;
+		font-family: 'Courier New', monospace;
+		height: 90vh;
+	}
+
+	.add-item-form {
+		max-width: 500px;
+		margin: 2rem auto;
+		border: 2px solid black;
+		padding: 2rem;
+		display: block;
+	}
+	
+	.add-item-form, label {
+		display: block;
+		text-transform: uppercase;
+		
+	}
+	
+	.add-item-form, input {
+		width: 95%;
+		padding: .5rem;
+		margin: .25rem 0 ;
+		border-radius: 5px;
+		border: 1px solid black;
+	}
+
+	#submit {
+		width: auto;
+		margin: 1px;
+		background-color: green;
+		cursor: pointer;
+		color: white;
+		text-transform: uppercase;
+		transition: .4s background ease;
+		transition: .4s color ease;
+	}
+	
+	#submit:hover {
+		background-color: lightblue;
+		color: black;
+	}
+	
+</style>
+
+<title>Add Item Form</title>
+</head>
+<body>
+	
+	
+	<form class="add-item-form" action="addItemServlet" method="post">
+		<label for="manufacturer">Add manufacturer</label>
+		<input type="text" name="manufacturer" autocomplete="off" required>
+		
+		<label for="item">Add item</label>
+		<input type="text" name="item" autocomplete="off" required>
+		
+		<label for="cost">Item cost</label>
+		<input type="text" name="cost" autocomplete="off" value="$" required>
+		
+		<div class="submit-buttons">
+			<input type="submit" value="Add new Item" name="doThis" id="submit"> <br>
+			<a href="viewAllItemsServlet"><input type="button" value="view all items" id="submit"></a> 
+			<a href="createNewClosetServlet"><input type="button" value="add new closet" id="submit"></a> 
+			<a href="viewAllClosetsServlet"><input type="button" value="view closets" id="submit"></a> 
+		</div>
+		
+	</form>
+</body>
+</html>

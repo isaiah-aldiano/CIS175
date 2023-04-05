@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.error {
+	border: 1px solid red;
+}
+
+span {
+	display: none;
+}

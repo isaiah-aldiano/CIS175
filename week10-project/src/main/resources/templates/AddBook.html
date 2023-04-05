@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Add Book</title>
+<script type="text/javascript" src="/js/form-validation.js"></script>
+<link rel="stylesheet" href="/css/addBooksCSS.css">
+	<link rel="shortcut icon" href="#">
+
+</head>
+<body onload="addListeners()">
+	
+ 	<form th:object="${NewBook}" th:action="@{/Update/{id}(id=${NewBook.id})}" method="POST" id="addBookForm">
+		Title: <input name="title" id="title" size="30" th:field="*{title}" required><br>
+		<span id="titleReq"></span>
+		Author First Name: <input name="author.firstName" id="firstName" size="20" th:field="*{author.firstName}" required><br>
+		<span id="firstNameReq"></span>
+		Author Last Name: <input name="author.lastName" id="lastName" size="20" th:field="*{author.lastName}" required><br>
+		<span id="lastNameReq"></span>
+		Publisher: <input name="publisher" id="publisher" size="30" th:field="*{publisher}"><br>
+		Publication Year: <input type="number" id="pubYear" name="year" size="4" th:field="*{pubYear}" min="1" max="9999"><br>
+		<span id="pubYearReq"></span>
+		Page Count: <input type="number" name="pageCount" id="pageCount" size="5" th:field="*{pageAmount}" min="1" max="9999"><br>
+		<span id="pageCountReq"></span>
+		Genre: <input name="genre" id="genre" size="30" th:field="*{genre}"><br> 
+		
+		<input type="submit" name="submit" value="submit" id="submit">
+
+	</form>
+	
+	<a href="/ViewAll" id="viewAll">View All Books</a>
+	<a href="/ViewAllAuthors">View All Authors</a>
+	
+	
+</body>
+</html>
